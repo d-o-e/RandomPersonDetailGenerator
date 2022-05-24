@@ -73,5 +73,28 @@ public class Generator {
 		return (random.nextInt(900000000) + 100000000);
 	}
 
+	public static void main(String[] args) {
+		Generator randomGenerator= new Generator("Census.csv");
 
+		for (int i = 0; i < 1000; i++) {
+			System.out.println(randomGenerator.nextPersonDetails());
+		}
+
+	}
+}
+
+
+class Person {
+	String fullName;
+	int ssn;
+
+	public Person(String fullName, int ssn) {
+		this.fullName = fullName;
+		this.ssn = ssn;
+	}
+
+	@Override
+	public String toString() {
+		return "Name : " + fullName + "  SSN :" + ssn;
+	}
 }
